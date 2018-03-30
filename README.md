@@ -1,6 +1,5 @@
-# Last updated on: 8 Feb 2018
-# Specials: Added chromecast exploit(released)
-
+# Last updated on: 27 March 2018
+# Added better plugin support
 |Tested on|.
 |---|---
 |Arch Linux|Working
@@ -12,19 +11,63 @@
 |MacOSX|Needs porting
 |Windows| Ha no.
 
-## This is a release of the roxysploit you can always support me at <a href="https://twitter.com/0x09f">@0x09f</a> or btc: 15oGX5N4dYFqa21owv8etJ7xkxE8k4jb1v
+## Please support me at btc: 15oGX5N4dYFqa21owv8etJ7xkxE8k4jb1v
 ## How to install
-<pre>$ git clone https://github.com/Eitenne/roxysploit.git; cd roxysploit; sudo /bin/bash install</pre>
+<pre>$ git clone https://github.com/Eitenne/roxysploit.git; cd roxysploit; sudo /usr/bin/python2 installer.py</pre>
 
 ## Legal Disclamer:
   The author does not hold any responsibility for the bad use of this tool,
   remember that attacking targets without prior consent is illegal and punished by law.
 
 ## Social:
-## + <a href="https://discord.gg/8EP2sjv"> Discord</a>
+## + <a href="https://discord.gg/7qXa3dg"> Discord</a>
 ## + <a href="https://www.youtube.com/channel/UCvydKPHB5fzqrJpS6BUqdRQ"> Youtube</a>
 ## + <a href="https://twitter.com/0x09f"> Twitter</a>
 
+## Plugin example
+<pre>
+Description = 'Some description at the top of the plugin file because its how it works :/'
+from plugin_support import *
+
+###################################################
+# get.lhost() = Create an input for lhost           #
+# ask.lhost = Print out the lhost                 #
+##
+# ask.target = print out target                   #
+# get.target() = Create an input for target         #
+##
+# ask.lport = print out lport                     #
+# get.lport() = Create an input for lport           #
+##
+# run("options") = Execute a shell command        #
+##
+# warning("oops becareful")                       #
+# fail("oh no something bad happend")             #
+# success("Well done") = Create a Success         #
+##
+# del sys.modules['dave'] = reload module         #
+# from dave import * = reimport modules           #
+###################################################
+
+get.lhost() #input.lhost
+get.lport()
+get.target() #input.target
+get.mac()
+
+ask.lhost
+ask.target
+ask.lport
+ask.mac
+#RELOADS THE CONFIGS (NEEDED IF USING INPUTS)#
+del sys.modules['dave']
+from dave import *
+##############################################
+
+run('uname -a')
+warning("There was an issue oh no lol")
+fail("RIP get fuked")
+success("heheheheheh good well done")
+text("random")</pre>
 <img src="carbon.png">
 
 ## Video Tutorials
@@ -135,6 +178,4 @@ Ftpbrute Brute-force attack an ftp(file transfer protocol) server Wifijammer you
 ## Credits
 0x5a
 Aaronius
-Witt
-TDHU
-Team(InsaneLand) @2017
+Team(InsaneLand) @2018
